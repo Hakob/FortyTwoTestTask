@@ -5,10 +5,10 @@ from .models import Account
 
 
 class HomeView(View):
-	
-		def get(self, request):
-			acs = Account.objects.all()
-			context={
-			'account': acs
-			}
-			return render(request, 'home.html', context=context)
+
+    def get(self, request):
+        acs = Account.objects.all()
+        context = {
+         'account': acs
+        }
+        return render(request, 'home.html', context=context)
