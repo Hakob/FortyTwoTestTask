@@ -1,3 +1,14 @@
-# from django.shortcuts import render
+from django.views.generic import View
+from django.shortcuts import render
 
-# Create your views here.
+from .models import Account
+
+
+class HomeView(View):
+	
+		def get(self, request):
+			acs = Account.objects.all()
+			context={
+			'account': acs
+			}
+			return render(request, 'home.html', context=context)
